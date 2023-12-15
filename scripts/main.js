@@ -150,6 +150,8 @@ scaleButtonElement.addEventListener('click', () => {
 // ВИБИРАННЯ ФАЙЛУ
 
 imageInputElement.addEventListener('change', async (event) => {
+  if (!event.target.files.length) return;
+
   /**
    * @type { File[] }
    */
