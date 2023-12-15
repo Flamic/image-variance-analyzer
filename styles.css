@@ -1,0 +1,145 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  color: #535353;
+}
+
+body {
+  margin: 0;
+}
+
+.bg-image {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: blur(20px);
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  margin: 0 8px 8px 0;
+
+  background-color: transparent;
+  border: 2px solid lightgrey;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #535353;
+  text-decoration: none !important;
+  transition: background-color 0.25s, border-color 0.25s, color 0.25s;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.button:hover {
+  background-color: rgba(48, 128, 208, 0.15);
+  border-color: rgba(48, 128, 208, 0.2);
+  color: #3080d0;
+}
+
+.button:active {
+  background-color: rgba(48, 128, 208, 0.3);
+  border-color: rgba(48, 128, 208, 0.4);
+  color: #3080d0;
+}
+
+.button > svg {
+  height: 0.9rem;
+  margin-right: 6px;
+}
+
+.image-input {
+  display: none;
+}
+
+.container {
+  padding: 24px;
+}
+
+.button-container {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+.table-chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 48px;
+}
+
+.image-canvas {
+  min-width: 0;
+}
+
+.image-table {
+  min-width: 600px;
+  max-width: 100%;
+  border-collapse: collapse;
+  flex: 1;
+}
+
+.image-table-head th {
+  padding: 12px;
+  border: 1px solid lightgray;
+}
+
+.image-table-body td {
+  padding: 12px;
+  border: 1px solid lightgray;
+}
+
+.image-table-body img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+body.loading .container {
+  filter: blur(4px);
+}
+
+body.loading .spinner {
+  display: inline-block;
+}
+
+.spinner {
+  --size: 4rem;
+  position: fixed;
+  top: calc(50% - var(--size) / 2);
+  left: calc(50% - var(--size) / 2);
+
+  color: #007bff;
+
+  display: none;
+  width: var(--size);
+  height: var(--size);
+  vertical-align: text-bottom;
+  border: 0.4rem solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: spinner-border 0.75s linear infinite;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
